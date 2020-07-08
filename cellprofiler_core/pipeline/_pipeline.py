@@ -842,6 +842,9 @@ class Pipeline:
             need_to_run_prepare_group = True
 
             for gi, image_number in enumerate(image_numbers):
+                ### Edited for Python3. Python3 cannot compare int and None.
+                if image_set_start is None:
+                    image_set_start=0
                 if image_number < image_set_start:
                     continue
 
